@@ -26,17 +26,14 @@ function List(props) {
         props.onSelect(selected);
     }
 
-    console.log("docs", docs);
-    console.log("currentDoc", currentDoc);
-
     return (
         <form onSubmit={getDocument}>
             <label>Select document:</label>
 
-            <select value={currentDoc} onChange={changeDoc}>
-                <option value="-1" key="0">Document list</option>
+            <select data-testid="select" value={currentDoc} onChange={changeDoc}>
+                <option data-testid="select-option" value="-1" key="0">Document list</option>
                 {docs.map((doc, index) => 
-                    <option value={doc._id} key={index}>{doc.name}</option>)}
+                    <option data-testid="select-option" value={doc._id} key={index}>{doc.name}</option>)}
             </select>
 
             <input type='submit' value='Get document' />

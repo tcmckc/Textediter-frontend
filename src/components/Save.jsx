@@ -1,34 +1,39 @@
-import docsModel from '../models/docs';
+import SaveBtn from './SaveBtn';
+import UpdateBtn from './UpdateBtn';
 
 function SaveUpdate(props) {
 
-    const save = async() => {
-        const data = {
-            name: props.newname,
-            text: props.value
-        }
-        console.log("Save as new", data);
+    // const save = async() => {
+    //     const data = {
+    //         name: props.newname,
+    //         text: props.value
+    //     }
+    //     console.log("Save as new", data);
 
-        await docsModel.saveDoc(data);
-    };
+    //     await docsModel.saveDoc(data);
+    // };
 
-    const update = async () => {
+    // const update = async () => {
 
-        const data = {
-            _id: props.id,
-            text: props.value,
-            name: props.name
-        }
-        console.log("Update", data);
+    //     const data = {
+    //         _id: props.id,
+    //         text: props.value,
+    //         name: props.name
+    //     }
+    //     console.log("Update", data);
 
-        await docsModel.updateDoc(data);
-    };
+    //     await docsModel.updateDoc(data);
+    // };
 
     return (
-		<div>
-			<button className="saveButton" onClick={save}>Save as new</button>
-			<button className="saveButton" onClick={update}>Update</button>
-		</div>
+		// <div>
+		// 	<button className="saveButton" onClick={save}>Save as new</button>
+		// 	<button className="saveButton" data-testid="update-button" onClick={update}>Update</button>
+		// </div>
+        <div>
+            <SaveBtn props={props} />
+            <UpdateBtn props={props} />
+        </div>
     );
 
 };

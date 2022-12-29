@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function Name(props) {
-    const [newDoc, setNewDoc] = useState();
+    const [newDoc, setNewDoc] = useState('');
 
     function changeName(event) {
         console.log("changeName!")

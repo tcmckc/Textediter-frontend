@@ -6,7 +6,6 @@
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "buffer": "^6.0.3",
     "cors": "^2.8.5",
     "express": "^4.18.2",
@@ -55,5 +54,12 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tcmckc/jsramverk.my-app/issues"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^8.19.1",
+    "@testing-library/user-event": "^14.4.3",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-15": "^1.4.4",
+    "enzyme-adapter-react-16": "^1.15.7"
   }
 }
