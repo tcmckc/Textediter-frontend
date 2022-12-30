@@ -16,6 +16,7 @@
     "react-router-dom": "^6.4.5",
     "react-scripts": "5.0.1",
     "react-trix": "^0.10.0",
+    "socket.io-client": "^4.5.4",
     "trix": "^2.0.3",
     "web-vitals": "^2.1.4"
   },
