@@ -2,13 +2,15 @@ import './App.css';
 //import { io } from "socket.io-client";
 
 import Editor from './components/Editor';
-//import { useEffect, useState } from 'react';
+import Login from './components/Login';
+import authModel from './models/auth';
+import { useState } from 'react';
 
 //let socket;
 
 
 function App() {
-  // const [socket, setSocket] = useState(null);
+  const [token, setToken] = useState("");
 
   // useEffect(() => {
   //   setSocket(io("http://localhost:8976"));
@@ -30,9 +32,13 @@ function App() {
         <h1>TEXT EDITOR</h1>
       </header>
       <main className="main">
-          <>
-            <Editor />
-          </>
+          {token ?
+            <>
+              <Editor />
+            </>
+            :
+            <Login setToken={setToken}/>
+          }
       </main>
     </div>
     
