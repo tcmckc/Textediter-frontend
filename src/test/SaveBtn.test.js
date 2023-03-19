@@ -14,7 +14,8 @@ jest.mock('../models/docs', () => ({
 test('calls save function when the button is clicked', () => {
     const newname = 'Test Name';
     const value = 'Test value';
-    const { getByText } = render(<SaveBtn newname={newname} value={value} />);
+    const email = 'Test editor';
+    const { getByText } = render(<SaveBtn props={{newname, value, email}} />);
 
     //const button = getByText('Save as new');
     const button = screen.getByRole("button", {name: /save as new/i})
@@ -22,5 +23,5 @@ test('calls save function when the button is clicked', () => {
     fireEvent.click(button);
 
     expect(docsModel.saveDoc).toHaveBeenCalledTimes(1);
-    expect(docsModel.saveDoc).toHaveBeenCalledWith({ name: newname, text: value });
+    expect(docsModel.saveDoc).toHaveBeenCalledWith({ name: newname, text: value, editor: email});
 });
