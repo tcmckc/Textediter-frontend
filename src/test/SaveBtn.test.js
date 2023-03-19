@@ -1,5 +1,5 @@
 import { render, fireEvent, screen } from '@testing-library/react';
-import SaveBtn from './SaveBtn';
+import SaveBtn from '../components/SaveBtn';
 import docsModel from '../models/docs';
 
 // When user fills in document name and text

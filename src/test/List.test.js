@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 //import docsModel from '../models/docs';
-import List from './List';
+import List from '../components/List';
 
 
 describe("List module", () => {

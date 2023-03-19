@@ -12,7 +12,7 @@ function Name(props) {
 
     return (
         <form>
-            <label>Document name:</label>
+            <label>Title:</label>
             <input value={newDoc} onChange={changeName}/>
         </form>
 

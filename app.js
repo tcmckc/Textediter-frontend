@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 1337;
+const port = 3000;
 const bodyParser = require("body-parser");
 const cors = require('cors');
 const morgan = require('morgan');
@@ -14,7 +14,7 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("My-app client started");
 });
 
 app.get("/json", (req, res) => {

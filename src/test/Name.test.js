@@ -1,5 +1,5 @@
 import { render, fireEvent, act } from '@testing-library/react';
-import Name from './Name';
+import Name from '../components/Name';
 
 // When a user fills in document name
 // 

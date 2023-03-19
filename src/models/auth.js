@@ -1,7 +1,7 @@
 const baseURL = 'http://localhost:1337';
 
 const auth = {
-    token: "",
+    //token: "",
     login: async function login(user) {
         const response = await fetch(`${baseURL}/auth/login`, {
             method: 'POST',
@@ -13,12 +13,20 @@ const auth = {
 
         const result = await response.json();
 
-        return result;
+        return result; 
     },
-    register: async function register() {
-        
-    }
+    register: async function register(user) {
+        const response = await fetch(`${baseURL}/auth/register`, {
+            method: "POST",
+            body: JSON.stringify(user),
+            headers: {
+                'content-type': 'application/json'
+            }
+        });
+        const result = await response.json();
 
+        return result;
+    }
 };
 
 export default auth;

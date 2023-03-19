@@ -1,43 +1,26 @@
 import './App.css';
 //import { io } from "socket.io-client";
 
+import Header from './components/Header';
 import Editor from './components/Editor';
 import Login from './components/Login';
-import authModel from './models/auth';
 import { useState } from 'react';
-
-//let socket;
 
 
 function App() {
   const [token, setToken] = useState("");
-
-  // useEffect(() => {
-  //   setSocket(io("http://localhost:8976"));
-
-  //   return () => {
-  //     if (socket) {
-  //       socket.disconnect();
-  //     }
-  //   }
-  // }, [socket]); 
-
-
-  // socket.emit('create', docs['_id']);
-  // socket.to(data['_id']).emit('doc', data);
+  const [email, setEmail] = useState("");
 
   return (
     <div className="App">
-      <header className="header">
-        <h1>TEXT EDITOR</h1>
-      </header>
       <main className="main">
+          <Header email={email} setEmail={setEmail} setToken={setToken} />
           {token ?
             <>
-              <Editor />
+              <Editor email={email} token={token}/>
             </>
             :
-            <Login setToken={setToken}/>
+            <Login setToken={setToken} setEmail={setEmail} />
           }
       </main>
     </div>

@@ -4,17 +4,16 @@ const UpdateBtn = (props) => {
     const update = async () => {
 
             const data = {
-                _id: props.id,
-                text: props.value,
-                name: props.name
+                _id: props.props.id,
+                text: props.props.value,
+                name: props.props.name
             }
-            console.log("Update", data);
 
             await docsModel.updateDoc(data);
     };
     return (
         <div>
-            <button className="saveButton" onClick={update}>Update</button>
+            <button className="saveButton" onClick={update}>UPDATE</button>
 		</div>
 
     );

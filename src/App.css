@@ -4,36 +4,56 @@
   background-color: lemonchiffon;
 }
 
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-} */
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
-
-/* .App-link {
-  color: #61dafb;
-} */
-
 button{
-  background-color:rgb(218, 209, 235);
+  background-color:rgba(218, 209, 235, 0.834);
+  border-color: rgb(193, 186, 209);
   margin: 10px;
   padding: 10px;
+  width: 200px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(247, 244, 104);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  height: 25px;
+}
+
+.editor {
+  display: flex;
+  flex-direction: row;
+}
+
+.editor-container1 {
+  margin-top: 100px;
+}
+
+.btn-small {
+  display: block;
+  background-color: rgba(218, 209, 235, 0.57);
+  margin: 0;
+  padding: 5px;
+  width: 100px;
+  border-radius: 10px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-small:hover {
+  background-color: rgba(177, 147, 233, 0.648);
 }
 
 .nav {
@@ -41,6 +61,21 @@ button{
   width: 100%;
   display: flex;
   justify-content:space-evenly;
+}
+
+.header {
+  margin: 50px 0;
+}
+
+.header-loggedIn {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.save-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .auth-container {
