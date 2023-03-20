@@ -23,11 +23,11 @@ function Share(props) {
 	return (
 		<div className="share-container">
 			<div>
-				<h4>Share document with:</h4>
+				<h4>Share document:</h4>
 				<input type="email" name="editor" onChange={changeHandler} placeholder="Enter email"/>
 			</div>
 			<div>
-				<button class="btn-small" onClick={share}>SHARE</button>
+				<button className="btn-small" onClick={share}>SHARE</button>
 			</div>
 		</div>
 	)

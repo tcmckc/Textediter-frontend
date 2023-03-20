@@ -6,17 +6,33 @@ const docsModel = {
         "https://jsramverk-editor-toss.azurewebsites.net",
 
     getAllDocs: async function getAllDocs(token) {
-        const response = await fetch(`${docsModel.baseUrl}/texteditor`, {
+        const response = await fetch(`${docsModel.baseUrl}/graphql`, {
+            method: 'POST',
             headers: {
-                'x-access-token': token,
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'x-access-token': token
             },
-            method: 'GET'
+            body: JSON.stringify({ query: `{ documents { _id name text editor } }` })
         });
 
         const result = await response.json();
         
         return result.data;
     },
+
+    // getAllDocs: async function getAllDocs(token) {
+    //     const response = await fetch(`${docsModel.baseUrl}/texteditor`, {
+    //         headers: {
+    //             'x-access-token': token,
+    //         },
+    //         method: 'GET'
+    //     });
+
+    //     const result = await response.json();
+        
+    //     return result.data;
+    // },
 
     updateDoc: async function updateDoc(doc) {
         const response = await fetch(`${docsModel.baseUrl}/update`, {

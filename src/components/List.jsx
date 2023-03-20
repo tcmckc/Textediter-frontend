@@ -8,8 +8,10 @@ function List(props) {
     useEffect(() => {
         (async () => {
             const allDocs = await docsModel.getAllDocs(props.token);
-            console.log(allDocs);
-            setDocs(allDocs.filter(doc => doc.editor.includes(props.email)));
+
+            console.log(allDocs.documents);
+
+            setDocs(Object.values(allDocs.documents).filter(doc => doc.editor.includes(props.email)));
         })();
     },[currentDoc]); 
 
