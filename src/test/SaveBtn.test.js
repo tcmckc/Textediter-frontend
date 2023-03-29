@@ -9,7 +9,7 @@ import docsModel from '../models/docs';
 
 jest.mock('../models/docs', () => ({
     saveDoc: jest.fn(),
-  }));
+}));
   
 test('calls save function when the button is clicked', () => {
     const newname = 'Test Name';
@@ -18,7 +18,7 @@ test('calls save function when the button is clicked', () => {
     const { getByText } = render(<SaveBtn props={{newname, value, email}} />);
 
     //const button = getByText('Save as new');
-    const button = screen.getByRole("button", {name: /save as new/i})
+    const button = screen.getByRole("button", {name: /save as new/i});
 
     fireEvent.click(button);
 

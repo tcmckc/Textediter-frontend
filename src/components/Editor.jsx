@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './../App.css';
 import ReactQuill, { defaultProps } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import QuillComments from 'quill-comment';
 import { io } from "socket.io-client";
 
 import List from './List';
@@ -46,7 +47,7 @@ export default function Editor (props) {
             <div>
               <h1>TEXT EDITOR</h1>
               <Name newname={newname} onChange={setNewname} />
-              <ReactQuill theme="snow" value={text} onChange={setText} />
+              <ReactQuill theme="snow" value={text} onChange={setText}/>
               <Save value={text} email={props.email} id={id} name={name} newname={newname}/>
             </div>
             <div className="editor-container1">

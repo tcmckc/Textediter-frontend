@@ -72,6 +72,27 @@ const docsModel = {
         const result = await response.json();
 
         console.log("Added editor to share document", result);
+    },
+
+    pdfDoc: async function pdfDoc() {
+        console.log("exported pdf");
+    },
+
+    sendInv: async function sendInv(token, addedEditor) {
+        const response = await fetch(`${docsModel.baseUrl}/invite`, {
+            body: JSON.stringify({
+                recipient: addedEditor
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'x-access-token': token
+            },
+            method: 'POST'
+        });
+        const result = await response.json();
+
+        console.log("Sent invitation", result.message);
     }
 };
 

@@ -1,15 +1,15 @@
 import SaveBtn from './SaveBtn';
 import UpdateBtn from './UpdateBtn';
+import PdfBtn from './PdfBtn';
 
 function SaveUpdate(props) {
-    console.log("props in save:", props); //ok
     return (
         <div className='save-container'>
             <SaveBtn props={props} />
             <UpdateBtn props={props} />
+            <PdfBtn props={props} />
         </div>
     );
-
 };
 
 export default SaveUpdate;
