@@ -4,7 +4,6 @@ import './App.css';
 import Header from './components/Header';
 import Editor from './components/Editor';
 import Login from './components/Login';
-import Comment from './components/Comment';
 import { useState } from 'react';
 
 
@@ -22,7 +21,6 @@ function App() {
             </>
             :
             <Login setToken={setToken} setEmail={setEmail} />
-            // <Comment />
           }
       </main>
     </div>
